@@ -1862,11 +1862,11 @@ const lt = {
     "fullScreen.exit": "Išeiti iš viso ekrano",
     "float.open": "Slankusis langas virš kitų programų",
     "float.openHint":
-      "Perkelti sceną į mažą langelį virš skaidrių ar kitų programų",
+      "Perkelti aplinką į mažą langelį virš skaidrių ar kitų programų",
     "float.failed": "Nepavyko atidaryti slankiojo lango.",
     "floating.title": "Drovus safaris plaukioja",
     "floating.instructions":
-      "Scena yra slankiąjame lange, virš kitų programų, ir toliau klausosi klasės. Palikite šį skirtuką atidarytą: lango grįžimo mygtukas ją sugrąžins atgal.",
+      "Aplinka yra slankiąjame lange, virš kitų programų, ir toliau klausosi klasės. Palikite šį skirtuką atidarytą: lango grįžimo mygtukas ją sugrąžins atgal.",
     "floating.return": "Sugrąžinti Drovųjį safarį atgal",
     "start.shy": "Ššš… šie gyvūnėliai yra drovūs!",
     "start.explain":
@@ -1874,10 +1874,10 @@ const lt = {
     "start.button": "Pradėti",
     "start.micNote":
       "Jūsų naršyklė paprašys leisti naudoti mikrofoną. Garsas matuojamas tik šiame kompiuteryje, niekada neįrašomas ir niekur nesiunčiamas.",
-    "scene.label": "Scena",
-    "scene.change": "Keisti sceną",
+    "scene.label": "Aplinka",
+    "scene.change": "Keisti aplinką",
     "scene.new": "Nauja",
-    "scene.newScenes": "Naujos scenos",
+    "scene.newScenes": "Naujos aplinkos",
     "scene.savanna.name": "Savana",
     "scene.savanna.hint": "Zebrai, žirafos ir liūtai",
     "scene.reef.name": "Koralų rifas",
@@ -1908,7 +1908,7 @@ const lt = {
     "collection.toCome": "Laukia dar {count}",
     "controls.reset": "Iš naujo",
     "controls.confirmReset": "Patvirtinti atstatymą",
-    "controls.resetQuestion": "Ištuštinti šią sceną ir pradėti iš naujo?",
+    "controls.resetQuestion": "Ištuštinti šią aplinką ir pradėti iš naujo?",
     "controls.resetYes": "Taip, atstatyti",
     "controls.keepGoing": "Tęsti",
     "controls.settings": "Nustatymai",
@@ -1932,8 +1932,8 @@ const lt = {
     "timer.style.circle": "Apskritimas",
     "timer.style.hourglass": "Smėlio laikrodis",
     "controls.addText": "Pridėti tekstą",
-    "controls.addTextHint": "Pridėkite tekstą ar piešinį į sceną",
-    "notes.label": "Tekstas scenoje",
+    "controls.addTextHint": "Pridėkite tekstą ar piešinį į aplinką",
+    "notes.label": "Tekstas aplinkoje",
     "notes.text": "Žodžiai",
     "notes.placeholder": "Rašykite čia…",
     "notes.drawing": "Piešinys",
@@ -1972,7 +1972,7 @@ const lt = {
     "classes.add": "Pridėti klasę",
     "classes.deleteTitle": "Ar tikrai?",
     "classes.deleteBody":
-      "Ištrinti {name}? Visi jos gyvūnai visose scenose ir visas jos rinkinys bus prarasti.",
+      "Ištrinti {name}? Visi jos gyvūnai visose aplinkose ir visas jos rinkinys bus prarasti.",
     "classes.deleteOnly":
       "Tai jūsų vienintelė klasė, todėl jos vietoje atsiras nauja, tuščia klasė.",
     "classes.deleteYes": "Taip, ištrinti",
@@ -1981,14 +1981,14 @@ const lt = {
     "settings.meter": "Triukšmo matuoklis",
     "settings.showMeter": "Rodyti ekrane",
     "settings.showMeterHint":
-      "Rodyti triukšmo matuoklį virš scenos, kol klasė dirba",
+      "Rodyti triukšmo matuoklį virš aplinkos, kol klasė dirba",
     "start.explainFlee":
       "Jei per garsu, jie pabėgs! Tylioje klasėje jie pasirodys bei pasiliks.",
     "settings.tooLoud": "Kai per garsu",
     "loud.flee.label": "Gyvūnai bėga",
     "loud.flee.hint":
       "Visi sustingsta, o kas 5 sek. į ekrano kraštus pabėga gyvūnai, kol klasė nenurims",
-    "loud.pause.label": "Pristabdyti sceną",
+    "loud.pause.label": "Pristabdyti aplinką",
     "loud.pause.hint": "Gyvūnai sustingo, o naujų nepasirodo",
     "settings.arrival": "Kaip dažnai pasirodo gyvūnai",
     "settings.aboutEvery": "Apie vieną gyvūną kas",
@@ -1998,8 +1998,8 @@ const lt = {
     "settings.tryIt": "Išbandykite",
     "settings.summon": "Iškviesti visus gyvūnus",
     "settings.advanced": "Išplėstiniai",
-    "settings.previewHalloween": "Peržiūrėti Haloween sceną",
-    "preview.title": "Haloween scena",
+    "settings.previewHalloween": "Peržiūrėti Haloween aplinką",
+    "preview.title": "Haloween aplinka",
     "preview.opening": "Iškart išėjęs",
     "preview.unlocks": "Atsiranda {date}",
     "settings.savedNote":
@@ -2090,7 +2090,7 @@ const lt = {
       ", kur rasite ir kitus mūsų įrankius.",
     "about.photoAlt": "2026 m. EdTech-a-thon dalyviai",
     "about.purposeTitle": "Ką jis daro",
-    "about.purpose": "Pasirinkite savaną, koralų rifą, kosmosą, priešistorinį amžių, mišką, džiunglės ar Arktiką ant lentos ir paspauskite „Pradėti“. Kol klasė netriukšmauja, gyvūnai pasirodo po vieną. Jei per garsu, jie bėga. Tai galite pakeisti nustatymuose, kad scena tik sustotų, kol vėl nebus tylu. Dauguma gyvūnų dažni, keli reti, o klasė gali peržiūrėti visus gyvūnus, kurie pasirodė.",
+    "about.purpose": "Pasirinkite savaną, koralų rifą, kosmosą, priešistorinį amžių, mišką, džiunglės ar Arktiką ant lentos ir paspauskite „Pradėti“. Kol klasė netriukšmauja, gyvūnai pasirodo po vieną. Jei per garsu, jie bėga. Tai galite pakeisti nustatymuose, kad aplinka tik sustotų, kol vėl nebus tylu. Dauguma gyvūnų dažni, keli reti, o klasė gali peržiūrėti visus gyvūnus, kurie pasirodė.",
     "about.promiseTitle": "Be paslėptų sąlygų",
     "about.promise":
       "Nemokama. Nėra mokamo varianto ir reklamų, o mes nerenkame jokių asmeninių duomenų apie jus ar jūsų mokinius.",
@@ -2117,10 +2117,10 @@ const lt = {
       "Nemokamas klasės triukšmo lygio matuoklis, kuris skatina tylą ir nebaudžia už triukšmą.",
     "guide.whatTitle": "Kas tai",
     "guide.what":
-      "Drovus safaris — klasės triukšmo matuoklis, veikiantis tik naršyklėje. Įjunkite jį bet kokiame ekrane, projektoriuje ar interaktyviame ekrane, ir jis parodo ramias savanos, koralų rifo, kosmoso nakties dangų, pelkės, medžių, džiunglių ar Arktikos ledo scenas. Svetainė klausosi, kiek garsu klasėje, per kompiuterio mikrofoną, ir kol klasė lieka žemiau garsumo ribos, drovūs gyvūnai pasirodo po vieną. Tai priešingybė triukšmingam matuokliui: nėra balų, rodyklės ir raudono įspėjimo, todėl nepaverčia triukšmo įdomesniu už tylą.",
+      "Drovus safaris — klasės triukšmo matuoklis, veikiantis tik naršyklėje. Įjunkite jį bet kokiame ekrane, projektoriuje ar interaktyviame ekrane, ir jis parodo ramias savanos, koralų rifo, kosmoso nakties dangų, pelkės, medžių, džiunglių ar Arktikos ledo aplinkas. Svetainė klausosi, kiek garsu klasėje, per kompiuterio mikrofoną, ir kol klasė lieka žemiau garsumo ribos, drovūs gyvūnai pasirodo po vieną. Tai priešingybė triukšmingam matuokliui: nėra balų, rodyklės ir raudono įspėjimo, todėl nepaverčia triukšmo įdomesniu už tylą.",
     "guide.useTitle": "Naudojimas klasėje",
     "guide.use.open":
-      "Atidarykite safaris.klasei.lt kompiuteryje, pasirinkite savaną, koralų rifą, kosmosą, priešistorinę sceną, mišką, džiunglės ar Arktiką ir paspauskite „Pradėti“. Naršyklė paprašys naudoti mikrofoną.",
+      "Atidarykite safaris.klasei.lt kompiuteryje, pasirinkite savaną, koralų rifą, kosmosą, priešistorinę aplinką, mišką, džiunglės ar Arktiką ir paspauskite „Pradėti“. Naršyklė paprašys naudoti mikrofoną.",
     "guide.use.goal":
       "Nustatykite garsumo ribą veiklai: Tyla, Individualus darbas arba Darbas poromis (pokalbio garsai), arba nustatykite ribą matuoklyje patys.",
     "guide.use.rate":
@@ -2132,14 +2132,14 @@ const lt = {
       "Kalibracija — nėra būtina. Per penkias tylos ir penkias normalaus pokalbio sekundes programą automatiškai prisitaiko prie jūsų klasės ir mikrofono.",
     "guide.tooLoudTitle": "Kas nutinka, kai per garsu",
     "guide.tooLoud":
-      "Scena sustingsta: savanoje praded šėlti smėlio audra, koralų rife patamsėja vanduo, kosmose atsiranda trikdžiai, priešistorinėje scenoje pakyla rūkas virš upės, miške rūkas tarp medžių, džiunglėse tropinis lietus ir Arktikoje sniego audra. Sustingus scenai nauji gyvūnai nebepasirodo. Kas toliau — jūsų pasirinkimas:",
+      "Aplinka sustingsta: savanoje praded šėlti smėlio audra, koralų rife patamsėja vanduo, kosmose atsiranda trikdžiai, priešistorinėje aplinkoje pakyla rūkas virš upės, miške rūkas tarp medžių, džiunglėse tropinis lietus ir Arktikoje sniego audra. Sustingus aplinkai nauji gyvūnai nebepasirodo. Kas toliau — jūsų pasirinkimas:",
     "guide.tooLoud.flee":
-      "Gyvūnai pradeda bėgti iš scenos (numatyta). Scena sustingsta, ir kol klasė triukšmauja, kas penkias sekundes į ekrano kraštą pabėga vienas, o tada ir daugiau gyvūnų. Kosmose jie išnyksta trikdžiuose.",
+      "Gyvūnai pradeda bėgti iš aplinkos (numatyta). Aplinka sustingsta, ir kol klasė triukšmauja, kas penkias sekundes į ekrano kraštą pabėga vienas, o tada ir daugiau gyvūnų. Kosmose jie išnyksta trikdžiuose.",
     "guide.tooLoud.pause":
-      "Pristabdyti sceną. Gyvūnai stovi, niekas nepasirodo, ir progresas link kito gyvūno laukia, kol klasė vėl nurims.",
+      "Pristabdyti aplinką. Gyvūnai stovi, niekas nepasirodo, ir progresas link kito gyvūno laukia, kol klasė vėl nurims.",
     "guide.animalsTitle": "Gyvūnai",
     "guide.animals":
-      "TODO: Savanoje 17 gyvūnų: surikatos, žirafos, hipopotamas ir ragabėdžių, su liūtais, leopardais ir drambliomis kaip retiausiais. Koralų rifo turi 18, nuo klouninių žuvų ir jūrškių iki jūrinių vėžlių ir aštakojų, su kirminėmis ryklėmis, mantomis ir ryklių ryklėmis kaip retiausiomis. Giliame kosmose 17 stebėjimų vyresniems mokiniams, nuo palydovų, asteroidų ir astronautų iki kosminės stoties, kometų ir Saturno panašių planetų, su spiraline galaktika, juodąja skylute, pulsaru ir žiedine nebulioze kaip retiausiais. Priešistorinėje scenoje 17 gyvūnų nuo labai vėlyvo dinosauropo amžiaus, su mažuosiais žinduoliais, vėžliais ir plunksnotais raptorius iki Triceratops ir Ankylosaurus, su Tyrannosaurus, Quetzalcoatlus ir milžinišku Alamosaurus kaip retiausiais. Miške 17 medžių gyvūnų, nuo čiapklų, liepsnelių ir ežių iki meškėnų, lapės ir elnio, su pilkasis vilkas, juodasis lokys ir briedis kaip retiausiais. Džiunglėse 17 džiunglių gyvūnų, nuo nuodingų varlių, tukantų ir kapucinus iki tinginių, makavų ir orangutanų, su jaguarais, gorilomis ir tigrų kaip retiausiais. Arktikoje 17 gyvūnų, nuo lemingų, mormonų ir poliarinių lapės iki karibu, vėplius ir baltuosius banginius, su snieginiais lokiais, narvalais ir grenlandiniais banginiais kaip retiausiais. Dažni gyvūnai pasirodo dažnai, o reti — tikras įvykimas, kurio daug sesijų nebeįžiūrės. Kiekviena scena turi savo gyvūnus, ir rinkinys atsimena visus, kuriuos matė klasė.",
+      "TODO: Savanoje 17 gyvūnų: surikatos, žirafos, hipopotamas ir ragabėdžių, su liūtais, leopardais ir drambliomis kaip retiausiais. Koralų rifo turi 18, nuo klouninių žuvų ir jūrškių iki jūrinių vėžlių ir aštakojų, su kirminėmis ryklėmis, mantomis ir ryklių ryklėmis kaip retiausiomis. Giliame kosmose 17 stebėjimų vyresniems mokiniams, nuo palydovų, asteroidų ir astronautų iki kosminės stoties, kometų ir Saturno panašių planetų, su spiraline galaktika, juodąja skylute, pulsaru ir žiedine nebulioze kaip retiausiais. Priešistorinėje aplinkoje 17 gyvūnų nuo labai vėlyvo dinosauropo amžiaus, su mažuosiais žinduoliais, vėžliais ir plunksnotais raptorius iki Triceratops ir Ankylosaurus, su Tyrannosaurus, Quetzalcoatlus ir milžinišku Alamosaurus kaip retiausiais. Miške 17 medžių gyvūnų, nuo čiapklų, liepsnelių ir ežių iki meškėnų, lapės ir elnio, su pilkasis vilkas, juodasis lokys ir briedis kaip retiausiais. Džiunglėse 17 džiunglių gyvūnų, nuo nuodingų varlių, tukantų ir kapucinus iki tinginių, makavų ir orangutanų, su jaguarais, gorilomis ir tigrų kaip retiausiais. Arktikoje 17 gyvūnų, nuo lemingų, mormonų ir poliarinių lapės iki karibu, vėplius ir baltuosius banginius, su snieginiais lokiais, narvalais ir grenlandiniais banginiais kaip retiausiais. Dažni gyvūnai pasirodo dažnai, o reti — tikras įvykimas, kurio daug sesijų nebeįžiūrės. Kiekviena aplinka turi savo gyvūnus, ir rinkinys atsimena visus, kuriuos matė klasė.",
     "guide.forTitle": "Kam skirta",
     "guide.for":
       "Pradinių klasių mokytojams, kurie nori ramaus, vizualaus būto matyti triukšmo lygį dirbant individualiai, skaitymo metu, testuose ar grupiniame darbe. Visa klasė mato vieną ekraną.",
