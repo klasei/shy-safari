@@ -1,127 +1,104 @@
 <script lang="ts">
   /**
-   * Which Scene to start in, on the start card. A drop-down rather than a
-   * row of buttons, now that there are too many Scenes to take in at a
-   * glance; it opens the same list as the menu in the bottom right.
+   * Which Scene to start in, on the start card. A grid of large tiles rather
+   * than a drop-down, so a Scene can be picked from anywhere in the room: each
+   * tile is a Scene — its picture, its name, and the animals it brings — big
+   * enough to read across a classroom. The Scene on screen is the one with the
+   * tick; choosing another swaps it in, and each Scene keeps its animals, so
+   * switching loses nothing.
    *
-   * Tagged "New" while the list has a new Scene in it that the teacher has
-   * not seen yet (`newScenes.svelte.ts`).
+   * A tile is badged "New" while it holds a Scene the teacher has not seen yet
+   * (`newScenes.svelte.ts`); a Scene only on offer for a while keeps its
+   * "Limited" badge.
    */
 
+  import { onMount, untrack } from "svelte";
   import type { App } from "$lib/app.svelte";
   import { t, type UiKey } from "$lib/i18n/index.svelte";
-  import type { SceneId } from "$lib/scenes";
+  import { availableScenes, type SceneId } from "$lib/scenes";
   import { newScenes } from "$lib/scenes/newScenes.svelte";
-  import SceneMenu from "./SceneMenu.svelte";
-  import { sceneHint } from "$lib/scenes/halloween/wording";
+  import { isLimited, sceneHint } from "$lib/scenes/halloween/wording";
   import { today } from "$lib/today.svelte";
 
   let { app }: { app: App } = $props();
 
-  let open = $state(false);
-  let container: HTMLElement;
-  let flagged = $derived(newScenes.unseen(today.day).length > 0);
-
-  /**
-   * The start card sits mid-screen, so the list opens whichever way has
-   * more room, and is never taller than that room: on a projector the
-   * screen is short, and the last Scenes must not end up below its edge.
-   */
-  let upward = $state(false);
-  let room = $state<number>();
-
-  function toggle() {
-    if (!open) {
-      const box = container.getBoundingClientRect();
-      const below = window.innerHeight - box.bottom;
-      upward = box.top > below;
-      room = Math.max(160, (upward ? box.top : below) - 24);
-    }
-    open = !open;
-  }
+  // Still badged while the grid is on screen, though seen from now on.
+  const fresh = untrack(() =>
+    newScenes.unseen(today.day).map((scene) => scene.id),
+  );
+  onMount(() => newScenes.markSeen(today.day));
 
   function choose(id: SceneId) {
     app.useScene(id);
-    open = false;
   }
 </script>
 
-<svelte:window
-  onkeydown={(event) => {
-    if (event.key === "Escape") open = false;
-  }}
-  onpointerdown={(event) => {
-    if (open && !container.contains(event.target as Node)) open = false;
-  }}
-/>
-
-<div class="relative mx-auto w-72 max-w-full" bind:this={container}>
-  <!-- Its contents are hidden, not absent, until the saved Scene is known:
-       the page is prerendered, and a reload should not flash the default. -->
-  <button
-    type="button"
-    class={[
-      "relative flex w-full items-center gap-3 rounded-2xl border bg-white py-1.5 pr-3 pl-2 text-left text-sm hover:bg-slate-50",
-      open ? "border-slate-900" : "border-slate-300",
-    ]}
-    aria-expanded={open}
-    aria-controls="start-scene-menu"
-    aria-label="{t('scene.change')}: {t(
-      `scene.${app.scene.id}.name` as UiKey,
-    )}{flagged ? ` (${t('scene.newScenes')})` : ''}"
-    onclick={toggle}
-  >
-    <span
-      class="flex min-w-0 flex-1 items-center gap-3"
-      class:invisible={!app.restored}
+<!-- Its contents are hidden, not absent, until the saved Scene is known: the
+     page is prerendered, and a reload should not flash the default. -->
+<div
+  role="group"
+  aria-label={t("scene.change")}
+  class="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4 lg:gap-4"
+  class:invisible={!app.restored}
+>
+  {#each availableScenes(today.day) as scene (scene.id)}
+    {@const current = scene.id === app.scene.id}
+    <button
+      type="button"
+      aria-current={current}
+      class={
+        "relative flex flex-col items-center gap-2 rounded-2xl border-2 p-4 text-center transition focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sky-500/40 sm:gap-2.5 sm:p-5 short:gap-1.5 short:p-3" +
+        (current
+          ? " border-sky-500 bg-sky-50 shadow-md"
+          : " border-slate-200 bg-white hover:border-slate-300 hover:bg-slate-50 hover:shadow-sm")
+      }
+      onclick={() => choose(scene.id)}
     >
-      <img src={app.scene.icon} alt="" class="size-9 shrink-0" />
-      <span class="min-w-0 flex-1">
-        <span class="block font-medium text-slate-900"
-          >{t(`scene.${app.scene.id}.name` as UiKey)}</span
-        >
-        <span class="block truncate text-xs text-slate-500"
-          >{sceneHint(app.scene.id, today.day)}</span
-        >
-      </span>
-    </span>
-    <svg
-      viewBox="0 0 24 24"
-      class={[
-        "size-4 shrink-0 text-slate-500 transition",
-        open && "rotate-180",
-      ]}
-      fill="none"
-      stroke="currentColor"
-      stroke-width="2.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      aria-hidden="true"
-    >
-      <path d="m6 9 6 6 6-6" />
-    </svg>
-    {#if flagged && !open}
+      <img src={scene.icon} alt="" class="size-16 sm:size-20 short:size-16" />
       <span
-        class="pointer-events-none absolute -top-2 -right-2 rounded-full bg-orange-500 px-1.5 py-px text-[0.65rem] font-semibold tracking-wide text-white uppercase shadow ring-2 ring-white"
-        aria-hidden="true">{t("scene.new")}</span
+        class={
+          "block text-base leading-tight sm:text-lg short:text-base " +
+          (current ? "font-bold text-sky-900" : "font-semibold text-slate-900")
+        }
       >
-    {/if}
-  </button>
-
-  {#if open}
-    <div
-      class={[
-        "absolute inset-x-0 z-10",
-        upward ? "bottom-full pb-2" : "top-full pt-2",
-      ]}
-    >
-      <SceneMenu
-        id="start-scene-menu"
-        class="w-full"
-        maxHeight={room}
-        chosen={app.restored ? app.scene.id : null}
-        onchoose={choose}
-      />
-    </div>
-  {/if}
+        {t(`scene.${scene.id}.name` as UiKey)}
+      </span>
+      <span
+        class="block max-w-full text-xs leading-snug text-slate-500 sm:text-sm short:text-xs"
+      >
+        {sceneHint(scene.id, today.day)}
+      </span>
+      {#if isLimited(scene.id)}
+        <span
+          class="absolute top-2 right-2 inline-flex items-center rounded-full bg-orange-100 px-2 py-0.5 text-[0.625rem] font-semibold tracking-wide whitespace-nowrap text-orange-800 uppercase"
+        >
+          {t("hollow.limited")}
+        </span>
+      {:else if fresh.includes(scene.id)}
+        <span
+          class="absolute top-2 right-2 inline-flex items-center rounded-full bg-sky-100 px-2 py-0.5 text-[0.625rem] font-semibold tracking-wide whitespace-nowrap text-sky-800 uppercase"
+        >
+          {t("scene.new")}
+        </span>
+      {/if}
+      {#if current}
+        <span
+          class="absolute -top-2 -right-2 grid size-6 place-items-center rounded-full bg-sky-500 text-white shadow ring-2 ring-white"
+          aria-hidden="true"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            class="size-4"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m5 12 5 5 9-10" />
+          </svg>
+        </span>
+      {/if}
+    </button>
+  {/each}
 </div>

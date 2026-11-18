@@ -288,12 +288,12 @@
           class="grid min-h-full place-items-center p-4 sm:p-6 short:px-30 short:py-3"
         >
           <div
-            class="max-w-lg rounded-xl bg-white p-6 text-center shadow-xl short:px-6 short:py-4"
+            class="max-w-4xl rounded-xl bg-white p-6 text-center shadow-xl short:px-6 short:py-4"
           >
             <img
               src={logoUrl}
               alt=""
-              class="mx-auto mb-3 size-24 short:mb-1 short:size-14"
+              class="mx-auto mb-3 size-16 short:mb-1 short:size-14"
             />
             <h1 class="text-2xl font-semibold text-slate-900 short:text-xl">
               {t("app.name")}
