@@ -9,13 +9,14 @@
 import { browser } from "$app/environment";
 import type { SceneId } from "$lib/scenes/types";
 
-export type LanguageCode = "en" | "es" | "fr";
+export type LanguageCode = "lt" | "en" | "es" | "fr";
 
 const en = {
   name: "English",
   locale: "en",
   ui: {
     "language.change": "Change language",
+    "app.name": "Shy Safari",
     "app.pageTitle": "Shy Safari — free classroom noise level monitor",
     "app.description":
       "A free classroom noise monitor for the projector. Shy savanna and coral reef animals come out the longer the room stays quiet. No sign-up, nothing recorded.",
@@ -641,6 +642,7 @@ const es = {
   locale: "es",
   ui: {
     "language.change": "Cambiar idioma",
+    "app.name": "Shy Safari",
     "app.pageTitle": "Shy Safari — medidor de ruido gratuito para el aula",
     "app.description":
       "Un medidor de ruido gratuito para el proyector del aula. Animales tímidos de la sabana y del arrecife aparecen mientras la clase está en silencio. Sin registro, sin grabaciones.",
@@ -1238,6 +1240,7 @@ const fr = {
   locale: "fr",
   ui: {
     "language.change": "Changer de langue",
+    "app.name": "Shy Safari",
     "app.pageTitle": "Shy Safari — sonomètre gratuit pour la classe",
     "app.description":
       "Un sonomètre gratuit pour le vidéoprojecteur de la classe. Des animaux timides de la savane et du récif sortent tant que la classe reste calme. Sans inscription, sans enregistrement.",
@@ -1835,7 +1838,612 @@ const fr = {
   },
 } satisfies Language;
 
+const lt = {
+  name: "Lietuvių",
+  locale: "lt",
+  ui: {
+    "language.change": "Keisti kalbą",
+    "app.name": "Drovus safaris",
+    "app.pageTitle": "Drovus safaris — nemokamas klasės triukšmo lygio matuoklis",
+    "app.description":
+      "Nemokamas klasės triukšmo matuoklis projektoriaus ekrane. Drovūs savanos ir koralų rifo gyvūnėliai pasirodo, kol klasė tyli. Be registracijos, nieko neįrašoma.",
+    "brand.title": "Sukurė teacher.dev",
+    "common.builtBy": "Sukurė teacher.dev",
+    "common.about": "apie",
+    "common.privacy": "privatumas",
+    "common.howItWorks": "kaip veikia",
+    "preview.alt":
+      "Rami savana su drambliu, zebrais, liūtu, žirafa ir surikata, šalia užrašo „Drovus safaris“ — nemokamas klasės triukšmo matuoklis",
+    "common.back": "← Grįžti: Drovus safaris",
+    "common.close": "Uždaryti",
+    "common.cancel": "Atšaukti",
+    "common.done": "Atlikta",
+    "fullScreen.enter": "Visas ekranas",
+    "fullScreen.exit": "Išeiti iš viso ekrano",
+    "float.open": "Plaukioti virš kitų skirtukų",
+    "float.openHint":
+      "Perkelti sceną į mažą langelį virš skaidrių ar kitų skirtukų",
+    "float.failed": "Nepavyko atidaryti plaukiojančio lango.",
+    "floating.title": "Drovus safaris plaukioja",
+    "floating.instructions":
+      "Scena yra savo lango, virš kitų skirtukų, ir toliau klausosi klasės. Palikite šį skirtuką atidarytą: lango grįžimo mygtukas ją atneš atgal.",
+    "floating.return": "Atnešti Drovą safarį atgal",
+    "start.shy": "Ššš… šie gyvūnėliai yra drovūs!",
+    "start.explain":
+      "Jei per garsu, jie lieka pasislėpę. Kai klasė vėl tyla, jie pradės pasirodyti.",
+    "start.button": "Pradėti",
+    "start.micNote":
+      "Jūsų naršyklė paprašys leisti naudoti mikrofoną. Garsas matuojamas šiame kompiuteryje ir niekada neįrašomas nei siunčiamas niekur.",
+    "scene.label": "Scena",
+    "scene.change": "Keisti sceną",
+    "scene.new": "Nauja",
+    "scene.newScenes": "Naujos scenos",
+    "scene.savanna.name": "Savana",
+    "scene.savanna.hint": "Zebrai, žirafos ir liūtai",
+    "scene.reef.name": "Koralų rifas",
+    "scene.reef.hint": "Žuvys, vėžliai ir rykliai",
+    "scene.space.name": "Gili erdvė",
+    "scene.space.hint": "Palydovai, kometai ir galaktikos",
+    "scene.prehistoric.name": "Priešistorė",
+    "scene.prehistoric.hint": "Tyrannosaurus, triceratopsai ir raptoriai",
+    "scene.forest.name": "Miškas",
+    "scene.forest.hint": "Voverės, lapės ir elniai",
+    "scene.jungle.name": "Džiunglės",
+    "scene.jungle.hint": "Tinginiai, tukantai ir jaguarai",
+    "scene.arctic.name": "Arktika",
+    "scene.arctic.hint": "Snieginiai lokiai, ruoniai ir narvalai",
+    "scene.halloween.name": "Vėliniai",
+    "scene.halloween.hint": "Varklynai, vaiduokliai ir moliūgai",
+    "hollow.limited": "Riboto laiko",
+    "hollow.daily": "Kiekvieną mokyklinę dieną naujas gyvūnas",
+    "hollow.closesIn": "Išeina po {days} d.",
+    "hollow.lastDay": "Paskutinė diena!",
+    "hollow.newToday": "Šiandien moliūgų lauke kažkas naujo…",
+    "hollow.signClosesIn": "Moliūgų laukas uždarys po {days} d.",
+    "hollow.signLastDay": "Paskutinė diena moliūgų lauke",
+    "collection.unlocksInDays": "Atsirums per {days} d.",
+    "collection.unlocksIn": "Atsirums per {time}",
+    "collection.comingSoon": "Artimiausiu laiku",
+    "collection.newToday": "Nauja šiandien",
+    "collection.toCome": "Laukia dar {count}",
+    "controls.reset": "Atstatyti",
+    "controls.confirmReset": "Patvirtinti atstatymą",
+    "controls.resetQuestion": "Ištuštinti šią sceną ir pradėti iš naujo?",
+    "controls.resetYes": "Taip, atstatyti",
+    "controls.keepGoing": "Tęsti",
+    "controls.settings": "Nustatymai",
+    "controls.animals": "Gyvūnai",
+    "controls.timer": "Laikmatis",
+    "timer.label": "Laikmatis",
+    "timer.minutes": "Minutės",
+    "timer.seconds": "Sekundės",
+    "timer.start": "Pradėti",
+    "timer.pause": "Pristabdyti",
+    "timer.resume": "Tęsti",
+    "timer.reset": "Atstatyti",
+    "timer.done": "Laikas baigėsi!",
+    "timer.close": "Uždaryti laikmatį",
+    "timer.move":
+      "Perkelti laikmatį: vilkite jo kraštą arba naudokite rodykles",
+    "timer.resize":
+      "Keisti laikmačio dydį: vilkite kampelį arba naudokite rodykles",
+    "timer.style": "Kaip rodomas laikas",
+    "timer.style.digits": "Skaičiai",
+    "timer.style.circle": "Apskritis",
+    "timer.style.hourglass": "Smėlio laikas",
+    "controls.addText": "Pridėti tekstą",
+    "controls.addTextHint": "Įdėti žodžių ar piešinį į sceną",
+    "notes.label": "Tekstas scenoje",
+    "notes.text": "Žodžiai",
+    "notes.placeholder": "Rašykite čia…",
+    "notes.drawing": "Piešinys",
+    "notes.tools": "Teksto įrankiai",
+    "notes.mode": "Rašyti arba piešti",
+    "notes.type": "Rašyti",
+    "notes.draw": "Piešti",
+    "notes.ink": "Spalva",
+    "notes.ink.dark": "Tamsi",
+    "notes.ink.red": "Raudona",
+    "notes.ink.blue": "Mėlyna",
+    "notes.ink.green": "Žalia",
+    "notes.undo": "Atšaukti",
+    "notes.clear": "Išvalyti piešinį",
+    "notes.delete": "Ištrinti",
+    "controls.pause": "Pristabdyti",
+    "controls.pauseHint":
+      "Užtildykite garso stebėjimą, kad galėtumėte pasikalbėti su klase",
+    "controls.resume": "Tęsti",
+    "paused.status": "Triukšmo matuoklis pristabdytas",
+    "classes.change": "Keisti klasę",
+    "classes.unnamed": "Mano klasė",
+    "classes.edit": "Redaguoti klases",
+    "classes.hint":
+      "Kiekviena klasė turi savo gyvūnus ir savo rinkinį.",
+    "classes.storage":
+      "Jūsų klasės išsaugomos šioje naršyklėje, tik šiame kompiuteryje. Jos neatsiras kitame kompiuteryje ar naršyklėje, o išvalius naršyklės duomenis jos bus ištrintos.",
+    "classes.current": "Ekrane",
+    "classes.rename": "Pervadinti",
+    "classes.renameLabel": "Naujas {name} pavadinimas",
+    "classes.save": "Išsaugoti",
+    "classes.delete": "Ištrinti",
+    "classes.deleteLabel": "Ištrinti {name}",
+    "classes.addLabel": "Naujos klasės pavadinimas",
+    "classes.addPlaceholder": "pvz., 2 pamoka",
+    "classes.add": "Pridėti klasę",
+    "classes.deleteTitle": "Ar tikrai?",
+    "classes.deleteBody":
+      "Ištrinti {name}? Visi jos gyvūnai visose scenose ir visas jos rinkinys bus prarasti.",
+    "classes.deleteOnly":
+      "Tai jūsų vienintelė klasė, todėl jos vietoje atsiras nauja, tuščia klasė.",
+    "classes.deleteYes": "Taip, ištrinti",
+    "settings.title": "Nustatymai",
+    "settings.microphone": "Mikrofonas",
+    "settings.meter": "Triukšmo matuoklis",
+    "settings.showMeter": "Rodyti ekrane",
+    "settings.showMeterHint":
+      "Palikti triukšmo matuoklį virš scenos, kol klasė dirba",
+    "start.explainFlee":
+      "Jei per garsu, jie bėgs! Palikite klasę tylia ir jie pasirodys bei liks.",
+    "settings.tooLoud": "Kai per garsu",
+    "loud.flee.label": "Gyvūnai bėga",
+    "loud.flee.hint":
+      "Visi sustingsta, o kas 5 sek. ekrano kraštu bėga gyvūnai, kol nebus rami",
+    "loud.pause.label": "Pristabdyti sceną",
+    "loud.pause.hint": "Gyvūnai stovi, o naujų niekas nepasirodo",
+    "settings.arrival": "Kaip dažnai atvyksta gyvūnai",
+    "settings.aboutEvery": "Apie vieną gyvūną kas",
+    "settings.minutes": "minutės",
+    "settings.showCounter": "Skaičiuoti gyvūnus, kai jie atvyksta",
+    "counter.label": "Atvyko gyvūnų: {count}",
+    "settings.tryIt": "Išbandykite",
+    "settings.summon": "Iškviesti visus gyvūnus",
+    "settings.advanced": "Išplėstiniai",
+    "settings.previewHalloween": "Peržiūrėti Vėlinių persona",
+    "preview.title": "Vėlinių persona",
+    "preview.opening": "Iškart išėjęs",
+    "preview.unlocks": "Atsiranda {date}",
+    "settings.savedNote":
+      "Nustatymai išsaugomi tik šiame kompiuteryje. Mikrofonas niekada neišeina iš įrenginio.",
+    "goal.silent.label": "Tyli",
+    "goal.silent.hint": "Visiška tyla",
+    "goal.independent.label": "Individualus",
+    "goal.independent.hint": "Tik tyli šnabždesys",
+    "goal.partner.label": "Darbas poromis",
+    "goal.partner.hint": "Pokalbio balsai",
+    "rate.relaxed": "Rami",
+    "rate.normal": "Normali",
+    "rate.lively": "Judesinga",
+    "rate.hint": "apie vieną gyvūną kas {minutes} min.",
+    "mic.default": "Numatytasis mikrofonas",
+    "mic.numbered": "Mikrofonas {number}",
+    "mic.connecting": "Jungiamas…",
+    "mic.connect": "Jungti mikrofoną",
+    "meter.current": "Dabartinis garsumas",
+    "meter.paused": "Pristabdyta — per garsu",
+    "meter.arriving": "Gyvūnai atvyksta",
+    "meter.goal":
+      "Gyvūnai atvyksta, kol klasė yra kairėje linijos ({goal}%)",
+    "calibration.title": "Kalibracija",
+    "calibration.needMic": "Pirmiausia įjunkite mikrofoną",
+    "calibration.calibrated": "✓ Sukalibruota",
+    "calibration.fit": "Pritaikyti matuoklį prie jūsų mikrofono",
+    "calibration.calibrate": "Kalibruoti",
+    "calibration.recalibrate": "Perkalibruoti",
+    "calibration.dialogTitle": "Sukalibruoti šią klasę",
+    "calibration.progress": "Progresas",
+    "calibration.stepQuiet": "Tyli klasė",
+    "calibration.stepTalking": "Normalus pokalbis",
+    "calibration.stepDone": "Atlikta",
+    "calibration.introLead": "1 žingsnis:",
+    "calibration.intro":
+      "paprašykite klasės būti visiškai tyloje. Kai bus paruošta, imsime {seconds} sek. mėginį.",
+    "calibration.quietButton": "Klasė tyli!",
+    "calibration.listening": "Klausausi:",
+    "calibration.quietLeft": "laikykite klasę tyloje dar {seconds} sek…",
+    "calibration.readyLead": "2 žingsnis:",
+    "calibration.ready":
+      "paprašykite klasės kalbėti normaliu darbiniu garsu.",
+    "calibration.talkingButton": "Klasė kalba!",
+    "calibration.talkingLeft":
+      "tęskite kalbą dar {seconds} sek…",
+    "calibration.doneLead": "Sukalibruota.",
+    "calibration.done":
+      "Matuoklis dabar rodo pagal šios klasės skalę — patikrinkite, ar tikslinė linija vis dar ten, kur norite.",
+    "calibration.retryLead": "Pabandykime dar kartą.",
+    "calibration.retry":
+      "Šie du mėginiai per arti vienas kito, kad būtų galima juos atskirti — klasė gal nebuvo tyli, arba mikrofonas gal negirdi klasės.",
+    "calibration.startAgain": "Pradėti iš naujo",
+    "calibration.hears": "Ką girdi mikrofonas",
+    "collection.title": "Gyvūnai",
+    "collection.spotted": "{class}: matyti {seen} iš {total}",
+    "collection.notSeen": "Dar nematytas",
+    "collection.seen": "Matytas {count}×",
+    "tier.common": "Dažnas",
+    "tier.uncommon": "Nedažnas",
+    "tier.rare": "Retas",
+    "chance.common.label": "Dažnų gyvūnų tikimybė",
+    "chance.uncommon.label": "Nedažnų gyvūnų tikimybė",
+    "chance.rare.label": "Retų gyvūnų tikimybė",
+    "chance.common": "{percent}% atvykusių yra dažni",
+    "chance.uncommon": "{percent}% atvykusių yra nedažni",
+    "chance.rare": "{percent}% atvykusių yra reti",
+    "blocked.title": "Gyvūnams reikia girdėti klasę",
+    "blocked.denied":
+      "Ši naršyklė uždraudė prieigą prie mikrofono. Paspauskite raktelio ar fotoaparato piktogramę adresų laukelyje, leiskite mikrofoną ir bandykite dar kartą.",
+    "blocked.missing":
+      "To mikrofono nėra. Pasirinkite kitą žemiau ir bandykite dar kartą.",
+    "blocked.unsupported":
+      "Ši naršyklė negali naudoti mikrofono. Veikia Chrome, Edge ir Safari.",
+    "blocked.tryAgain": "Bandyti dar kartą",
+    "about.pageTitle": "Apie — Drovus safaris",
+    "about.meta":
+      "Drovus safaris — nemokamas klasės triukšmo įrankis, sukurtas EdTech-a-thon renginyje ir vedamas teacher.dev. Be reklamų, be paskyrų.",
+    "about.title": "Apie",
+    "about.lede":
+      "Įjunkite projektoriuje. Kuo tyli klasė, tuo daugiau gyvūnų pasirodo.",
+    "about.originTitle": "Kur jis kilo",
+    "about.origin.beforeEvent":
+      "Drovus safaris prasidėjo kaip trijų dienų projektas ",
+    "about.origin.afterEvent":
+      ", renginyje, kur žmonės susirenka kurti nemokamus įrankius klasėms. Dabar jį vedžia ",
+    "about.origin.afterTeacher":
+      ", kur rasite ir kitus mūsų įrankius.",
+    "about.photoAlt": "2026 m. EdTech-a-thon dalyviai",
+    "about.purposeTitle": "Ką jis daro",
+    "about.purpose": "Įjunkite savaną, koralų rifo, gilią erdvę, dinosauropo amžių, mišką, džiunglės ar Arktiką ant lentos ir paspauskite „Pradėti“. Kol klasė lieka žemiau garsumo tikslo, gyvūnai pasirodo po vieną. Jei per garsu, jie bėga. Tai galite pakeisti nustatymuose, kad scena tik sustotų, kol vėl nebus tylu. Dauguma gyvūnų dažni, keli reti, o klasė gali peržiūrėti visus matytus.",
+    "about.promiseTitle": "Be paslėptų sąlygų",
+    "about.promise":
+      "Nemokama. Nėra mokamo varianto ir reklamų, o mes nerenkame jokių asmeninių duomenų apie jus ar jūsų mokinius.",
+    "about.feedbackTitle": "Susisiekite",
+    "about.feedback":
+      "Jei kas neveikia, arba turite idėjų Drovam safarui ar kitam įrankiui, kurį naudotumėte klasėje, parašykite mums el. paštu.",
+    "about.email": "Parašykite į support@teacher.dev",
+    "privacy.pageTitle": "Privatumas — Drovus safaris",
+    "privacy.meta": "Ką Drovus safaris renkasi, ko — ne, ir kodėl.",
+    "privacy.title": "Privatumas",
+    "privacy.lede": "Ką renkame, ko ne, ir kodėl.",
+    "privacy.microphone":
+      "Drovus safaris klausosi per jūsų mikrofoną tik tam, kad išmatuotų, kiek garsu klasėje. Garsas virsta vienu garsumo lygiu šiame kompiuteryje, sekundės per sekundę; jis niekada neįrašomas, nesaugomas ir niekur nesiunčiamas.",
+    "privacy.local":
+      "Nėra paskyrų, o mes nerenkame mokytojų ar mokinių asmeninių duomenų. Jūsų nustatymai, kalibracija ir gyvūnai, kuriuos matė kiekviena jūsų klasė, saugomi šios naršyklės vietinėje saugykloje tik šiame kompiuteryje, o išvalius naršyklės duomenis jie ištrynami.",
+    "privacy.analytics.beforeLink":
+      "Mes naudojame Cloudflare Web Analytics anonimiškai skaičiuoti lankytojus, kas padeda suprasti, kaip Drovus safaris naudojamas klasėse. Cloudflare Web Analytics nenaudoja slapukų, nefiksuoja lankytojų pėdsakų ir nestebi vartotojų kitose svetainėse; žr. Cloudflare ",
+    "privacy.analytics.link": "privatumo politiką",
+    "privacy.analytics.afterLink":
+      " dėl detalių. Nesidalijame, neparduodame ir kitaip neišsiunčiame jokių lankytojų duomenų trečiosioms šalims.",
+    "privacy.contact": "Klausimų ar nerimo? Parašykite į ",
+    "guide.title": "Kaip veikia Drovus safaris",
+    "guide.lede":
+      "Nemokamas klasės triukšmo lygio matuoklis, kuris skatina tylią, o ne baudžia triukšmą.",
+    "guide.whatTitle": "Kas tai",
+    "guide.what":
+      "Drovus safaris — klasės triukšmo matuoklis, veikiantis naršyklėje. Įjunkite jį projektoriuje ar interaktyvioje lentelėje, ir jis parodo ramias savanos, koralų rifo, giliojo kosmoso nakties dangų, kredos amžiaus pelkės, medžių, džiunglių ar Arktikos ledo. Jis klausosi, kiek garsu klasėje, per kompiuterio mikrofoną, ir kol klasė lieka žemiau garsumo tikslo, drovūs gyvūnai pasirodo po vieną. Tai priešingybė triukšmingam matuokliui: nėra balų, rodyklės ir raudono įspėjimo, todėl niekas neverta triukšmą įdomesniu nei tylią.",
+    "guide.useTitle": "Naudojimas klasėje",
+    "guide.use.open":
+      "Atidarykite shysafari.com kompiuteryje, prijungtame prie projektojo, pasirinkite savaną, koralų rifo, gilią erdvę, priešistorinę sceną, mišką, džiunglės ar Arktiką ir paspauskite „Pradėti“. Naršyklė paprašys naudoti mikrofoną.",
+    "guide.use.goal":
+      "Nustatykite garsumo tikslą veiklai: Tyli, Individualus (tyli šnabždesys) arba Darbas poromis (pokalbio balsai), arba ištempkite liniją matuoklyje į bet kurį tarpinį tašką.",
+    "guide.use.rate":
+      "Leiskite klasei dirbti. Pirmasis gyvūnas pasirodo po 10–20 tylių sekundžių, o toliau apie vieną kas penkias tylos minutes. Nustatymuose pasirinkite Rami, Normali arba Judesinga, arba įveskite bet kokį minučių skaičių.",
+    "guide.loudTitle": "Kaip jis nusprendžia, kad klasė per garsi",
+    "guide.loud":
+      "Trumpi garsai, pavyzdžiui, pabudėjimas į duris ar kritusi knyga, nesiskaito. Klasė turi išbūti virš tikslo ilgesnį laiką: apie šešias sekundes, jei tikrai viršija, arba apie vieną sekundę, jei gerokai garsiau. Kai tyla grįžta, scena atsinaujina per tris sekundes.",
+    "guide.calibrate":
+      "Kalibracija — ne privaloma. Penkios tylos ir penkios normalaus pokalbio sekundės moko programą, kaip skamba jūsų klasė ir mikrofonas.",
+    "guide.tooLoudTitle": "Kas nutinka, kai per garsu",
+    "guide.tooLoud":
+      "Scena apšyla: savanoje dulkių migla, rifo tamsi vanduo, giliame kosmose trikdžiai, priešistorinėje scenoje rūkas virš upės, miške rūkas tarp medžių, džiunglėse tropinis lietus ir Arktikoje balta sniego migla, ir naujų gyvūnų nebesirodo. Kas toliau — jūsų pasirinkimas:",
+    "guide.tooLoud.flee":
+      "Gyvūnai bėga (numatyta). Scena sustingsta, ir kol klasė lieka per garsi, kas penkias sekundes ekrano kraštu išbėga vienas, o tada ir daugiau gyvūnų. Giliame kosmose jie išnyksta trikdžiuose.",
+    "guide.tooLoud.pause":
+      "Pristabdyti sceną. Gyvūnai stovi, niekas nima, ir progresas link kito gyvūno laukia, kol klasė vėl nurims.",
+    "guide.animalsTitle": "Gyvūnai",
+    "guide.animals":
+      "Savanoje 17 gyvūnų, nuo surikatų ir zebrov iki žirafų, hipopotamų ir ragabėdžių, su liūtais, leopardais ir drambliomis kaip retiausiais. Koralų rifo turi 18, nuo klouninių žuvų ir jūrškių iki jūrinių vėžlių ir aštakojų, su kirminėmis ryklėmis, mantomis ir ryklių ryklėmis kaip retiausiomis. Giliame kosmose 17 stebėjimų vyresniems mokiniams, nuo palydovų, asteroidų ir astronautų iki kosminės stoties, kometų ir Saturno panašių planetų, su spiraline galaktika, juodąja skylute, pulsaru ir žiedine nebulioze kaip retiausiais. Priešistorinėje scenoje 17 gyvūnų nuo labai vėlyvo dinosauropo amžiaus, su mažuosiais žinduoliais, vėžliais ir plunksnotais raptorius iki Triceratops ir Ankylosaurus, su Tyrannosaurus, Quetzalcoatlus ir milžinišku Alamosaurus kaip retiausiais. Miške 17 medžių gyvūnų, nuo čiapklų, liepsnelių ir ežių iki meškėnų, lapės ir elnio, su pilkasis vilkas, juodasis lokys ir briedis kaip retiausiais. Džiunglėse 17 džiunglių gyvūnų, nuo nuodingų varlių, tukantų ir kapucinus iki tinginių, makavų ir orangutanų, su jaguarais, gorilomis ir tigrų kaip retiausiais. Arktikoje 17 gyvūnų, nuo lemingų, mormonų ir poliarinių lapės iki karibu, vėplius ir baltuosius banginius, su snieginiais lokiais, narvalais ir grenlandiniais banginiais kaip retiausiais. Dažni gyvūnai pasirodo dažnai, o reti — tikras įvykimas, kurio daug sesijų nebeįžiūrės. Kiekviena scena turi savo gyvūnus, ir rinkinys atsimena visus, kuriuos matė klasė.",
+    "guide.forTitle": "Kam skirta",
+    "guide.for":
+      "Mokytojų bet kokio lygio, kurie nori ramią, vizualią signalo balsui lygiui dirbant individualiai, skaitymo metu, testuose, centruose ar grupiniame darbe. Visa klasė dalijasi vienu ekranu, o mokiniams nieko nereikia.",
+    "guide.faqTitle": "Mokytojų klausimai",
+    "guide.faq.free.q": "Ar Drovus safaris nemokamas?",
+    "guide.faq.free.a":
+      "Taip. Nėra mokėjimo barjerų, reklamų ir premiumo versijos. Jis kilo iš EdTech-a-thon, bendruomenės, kuri kuria nemokamus įrankius klasėms, ir jį prižiūri teacher.dev.",
+    "guide.faq.record.q": "Ar jis įrašo klasę?",
+    "guide.faq.record.a":
+      "Ne. Mikrofonas naudojamas tik tam, kad išmatuotų, kiek garsu klasėje, kaip viena skaičius, sekundės per sekundę, jūsų kompiuteryje. Nieko neįrašoma, nesaugoma ir niekur nesiunčiama.",
+    "guide.faq.accounts.q": "Ar man ar mokiniams reikia paskyros?",
+    "guide.faq.accounts.a":
+      "Ne. Nėra registracijos, prisijungimo ir nieko nereikia įdiegti. Nustatymai saugomi naršyklėje tame kompiuteryje.",
+    "guide.faq.devices.q": "Ko reikia, kad veiktų?",
+    "guide.faq.devices.a":
+      "Kompiuteris su mikrofonu ir naujausia naršykle, pavyzdžiui, Chrome, Edge, Firefox arba Safari. Veikia nešiojamieji, Chromebook ir interaktyvios lentelės. Jis sukurta projektoriaus ar dideliam ekranui, bet veikia ir planšetėje ar telefone.",
+    "guide.faq.languages.q": "Kokias kalbas palaiko?",
+    "guide.faq.languages.a":
+      "Lietuvių, anglų, ispanų ir prancūzų. Jis seka naršyklės kalbą, o ją galima pakeisti meniu virš ekrano.",
+    "guide.faq.meter.q": "Kuo jis skiriasi nuo triukšmo matuoklio?",
+    "guide.faq.meter.a":
+      "Triukšmo matuoklis rodo klasei, kiek jie garsūs, o tai gali paversti garsėjimu žaidimu. Drovus safaris rodo tik ramų sceną, kuri lėtai pilna gyvūnų, todėl tylios darbo įvertinimas yra tai, ką mato klasė, ir nėra jokių balų, kuriuos reikėtų įveikti.",
+  },
+  scenes: {
+    space: {
+      "start.shy": "Tyli klasė laiko signalą aiškų.",
+      "start.explain":
+        "Triukšmas pasirodo kaip trikdžiai. Kol klasė rami, teleskopas sugauna naujus stebėjimus; jei per garsu, jis laukia, kol signalas aiškės.",
+      "start.explainFlee":
+        "Triukšmas pasirodo kaip trikdžiai. Kai klasė per garsi, stebėjimai išsisklaido trikdžiuose ir prarandami; kol rami, atsiranda nauji.",
+      "controls.animals": "Stebėjimai",
+      "loud.flee.label": "Stebėjimai išblėsta",
+      "loud.flee.hint":
+        "Viskas sustingsta, o kas 5 sek. keli išnyksta trikdžiuose, kol nebus rami",
+      "loud.pause.hint":
+        "Viskas stovi ir niekas naujas signalas neįsijungia",
+      "settings.arrival": "Kaip dažnai ateina nauji stebėjimai",
+      "settings.aboutEvery": "Apie vienas stebėjimas kas",
+      "settings.summon": "Iškviesti visus stebėjimus",
+      "rate.hint": "apie vienas stebėjimas kas {minutes} min.",
+      "settings.showCounter": "Skaičiuoti stebėjimus, kai jie ateina",
+      "counter.label": "Stebėjimai iki šiol: {count}",
+      "meter.paused": "Pristabdyta — per daug trikdžių",
+      "meter.arriving": "Signalai ateina",
+      "meter.goal":
+        "Nauji stebėjimai ateina, kol klasė yra kairėje linijos ({goal}%)",
+      "collection.title": "Stebėjimai",
+      "collection.spotted": "{class}: {seen} iš {total} stebėtų",
+      "collection.notSeen": "Dar nebematytas",
+      "collection.seen": "Stebėtas {count}×",
+      "chance.common.label": "Dažnų stebėjimų tikimybė",
+      "chance.uncommon.label": "Nedažnų stebėjimų tikimybė",
+      "chance.rare.label": "Retų stebėjimų tikimybė",
+      "blocked.title": "Teleskopas turi girdėti klasę",
+      "notes.ink.dark": "Balta",
+    },
+  },
+  creatures: {
+    meerkat: "Surikata",
+    warthog: "Dikšlys",
+    zebra: "Zebras",
+    gazelle: "Tomsono gazelė",
+    ostrich: "Strutis",
+    "guinea-fowl": "Naminė patarška",
+    tortoise: "Žemės vėžlys",
+    hornbill: "Jaučiaragis",
+    giraffe: "Žirafa",
+    hippo: "Hipopotamas",
+    rhino: "Ragabėdis",
+    cheetah: "Gyvūnas",
+    flamingo: "Flamingas",
+    vulture: "Grifas",
+    lion: "Liūtas",
+    leopard: "Leopardas",
+    elephant: "Dramblys",
+    clownfish: "Klouninė žuvis",
+    "blue-tang": "Mėlynoji žuvis",
+    angelfish: "Anglų žuvis",
+    seahorse: "Eskaras",
+    starfish: "Jūrinė žvaigždė",
+    crab: "Šrautas",
+    shrimp: "Kreve",
+    parrotfish: "Papūgų žuvis",
+    pufferfish: "Pučiamoji žuvis",
+    octopus: "Aštakoja",
+    "sea-turtle": "Jūrinis vėžlys",
+    "moray-eel": "Mūreelė",
+    stingray: "Dulkina",
+    "jellyfish-bloom": "Medūzų žiedas",
+    cuttlefish: "Sepija",
+    "hammerhead-shark": "Kirminė ryklė",
+    "manta-ray": "Manta",
+    "whale-shark": "Ryklių ryklė",
+    satellite: "Palydovas",
+    asteroid: "Asteroidas",
+    meteor: "Meteoras",
+    "space-probe": "Kosminė probe",
+    "space-capsule": "Kosminė kapsulė",
+    astronaut: "Astronautas",
+    "space-shuttle": "Kosminis šatlis",
+    iss: "Kosminė stotis",
+    comet: "Kometa",
+    "ringed-planet": "Planeta su žiedais",
+    moon: "Mėnulis",
+    "space-telescope": "Kosminis teleskopas",
+    "gas-giant": "Dujinis milžinas",
+    "spiral-galaxy": "Spiralinė galaktika",
+    "black-hole": "Juodoji skylė",
+    pulsar: "Pulsaras",
+    "ring-nebula": "Žiedinė nebuliozė",
+    didelphodon: "Didelphodontas",
+    palaeosaniwa: "Paleosaniva",
+    basilemys: "Bazilemias",
+    avisaurus: "Avisauras",
+    pectinodon: "Pektinodontas",
+    acheroraptor: "Acheroraptorius",
+    thescelosaurus: "Teselosauras",
+    struthiomimus: "Strutimimas",
+    anzu: "Anzu",
+    pachycephalosaurus: "Pachicefalosaurusas",
+    dakotaraptor: "Dakotaraptorius",
+    ankylosaurus: "Ankilosauras",
+    triceratops: "Triceratopsas",
+    edmontosaurus: "Edmontosauras",
+    tyrannosaurus: "Tyrannosaurusas",
+    quetzalcoatlus: "Kuetzalcoatlas",
+    alamosaurus: "Alamosaurusas",
+    chipmunk: "Čiapklas",
+    "gray-squirrel": "Pilkoji voverė",
+    robin: "Liepsnelė",
+    hedgehog: "Ežys",
+    cottontail: "Kiškutis",
+    woodpecker: "Genys",
+    skunk: "Skunksas",
+    raccoon: "Meškėnas",
+    "great-horned-owl": "Didysis apuokas",
+    porcupine: "Ursonas",
+    badger: "Barsukas",
+    beaver: "Bebras",
+    "red-fox": "Rudoji lapė",
+    "white-tailed-deer": "Baltuoji elnė",
+    "gray-wolf": "Pilkasis vilkas",
+    "black-bear": "Juodasis lokys",
+    moose: "Briedis",
+    "poison-dart-frog": "Lapalaipė varlė",
+    "tree-frog": "Medinė varlė",
+    butterfly: "Mėlynoji morfa",
+    hummingbird: "Kolibris",
+    toucan: "Tukanas",
+    capuchin: "Kapucinas",
+    iguana: "Žalioji iguana",
+    capybara: "Kapibara",
+    chameleon: "Chameleonas",
+    sloth: "Tinginys",
+    macaw: "Vėdrynas makavas",
+    orangutan: "Orangutanas",
+    okapi: "Okapija",
+    tapir: "Malaizijos tapyras",
+    jaguar: "Jaguaras",
+    gorilla: "Goryla",
+    tiger: "Tigras",
+    lemming: "Lemingas",
+    "arctic-hare": "Baltauodegė žvyrė",
+    ptarmigan: "Tundrinė žvyrė",
+    puffin: "Atlantinis mormonas",
+    "arctic-tern": "Poliarinė žuvėdra",
+    "arctic-fox": "Poliarinė lapė",
+    "harp-seal": "Grenlandinis ruonis",
+    eider: "Eiderė",
+    "snowy-owl": "Baltoji pelėda",
+    caribou: "Karibu",
+    "musk-ox": "Avijautis",
+    "arctic-wolf": "Arktinis vilkas",
+    walrus: "Vėplys",
+    beluga: "Baltasis banginis",
+    "polar-bear": "Snieginė lokė",
+    narwhal: "Narvalas",
+    "bowhead-whale": "Grenlandinis banginis",
+    "harvest-mouse": "Derliaus pelė",
+    "garden-spider": "Daržo voras",
+    toad: "Rupūžė",
+    "brown-bat": "Rudasis varklys",
+    crow: "Varna",
+    "barn-owl": "Langinė kregždė",
+    "black-cat": "Juodoji katė",
+    "little-ghost": "Mažasis vaiduoklis",
+    "cloudy-moon": "Debesuotas Mėnulis",
+    gourdling: "Gourdlingas",
+    scarecrow: "Vilkakojis",
+    mummy: "Mumija",
+    vampire: "Vampyras",
+    gargoyle: "Garso",
+    "howling-wolf": "Šaukiantis vilkas",
+    "great-boo": "Didysis Bū!",
+    "jack-o-lantern": "Moliūgo luktas",
+  },
+  facts: {
+    didelphodon:
+      "Vėžiopėškų giminės gyvūnas, turintis stipriausią žandikaulį, atsižvelgiant į dydį, iš visų žinomų žinduolių.",
+    palaeosaniwa:
+      "Didelis medžioklinis vėlybas, šiandieninių varanų giminaitis.",
+    basilemys:
+      "Žemės vėžlys su žemu, platu apvalkalu, padengtu šiurkščia, duobėta struktūra.",
+    avisaurus:
+      "„Priešinis paukštis“, dažniausia paukščių rūšis dinosauropo amžiuje. Jie visi išmirė kartu su jais.",
+    pectinodon:
+      "Jo pavadinimas reiškia „kamšto dantį“, dėl didelių dantų dantelių, kurie yra beveik viskas, kas apie jį rasta.",
+    acheroraptor:
+      "Plunksnotas raptorius, pavadintas pagal Acheroną, pasak grikų mitologijos požemių upę.",
+    thescelosaurus:
+      "Jo pavadinimas reiškia „stebuklingą vėlybą“. Storas augalėdis su snapeliu ir skruostais.",
+    struthiomimus:
+      "Jo pavadinimas reiškia „strutis imitatoriaus“: be dantų snapelis, ilgos kojos ir plunksnoti sparnai.",
+    anzu:
+      "Pavadintas pagal Mesoopotamijos mitologijos plunksnotą demoną. Jo galvoje buvo aukštas kailis, kaip kasuaro.",
+    pachycephalosaurus:
+      "Kaulinis kupolas jo galvoje buvo iki 25 cm storio.",
+    dakotaraptor:
+      "Kaulų iškilimumai jo priekiniuose rankose rodo, kur buvo pritvirtintos didelės sparno plunksnos.",
+    ankylosaurus:
+      "Jo uodega baigėsi sujungto kaulo klubelė, o uodega sustiprinta, kad galėtų ja svyruoti.",
+    triceratops:
+      "Dažniausias didelis dinosaurusas Helo Kroko uolose.",
+    edmontosaurus:
+      "Iš mumifikuotos odos matyti minkštas kupas nugaroje, spygliai uodegoje ir kojelės ant pirštų.",
+    tyrannosaurus:
+      "Vienas stipriausių žandikaulių iš visų žemės gyvūnų per visą laiką. Lūpos tikriausiai dengė jo dantis, kaip vėlybams.",
+    quetzalcoatlus:
+      "Pterosaurus su apie 10 m sparno išrąžomis, aukštas kaip žirafa, kai stovėjo keturimis.",
+    alamosaurus:
+      "Vienas paskutinių sauropodų, ir su 26 m ar daugiau, vienas didžiausių gyvūnų savo metu.",
+    lemming:
+      "Jis neguliuoja: visą žiemą gyvena tuneliuose po sniegu, kur yra šilčiau.",
+    "arctic-hare":
+      "Jis gali bėgti 60 km/val. greičiu, o kartais šokinėja ant galinių kojų, kaip kangaris.",
+    ptarmigan:
+      "Plunksnos ant kojų veikia kaip rašlai, o žiemą jis balinėja visur, tik ne ant uodegos.",
+    puffin:
+      "Jo snapelis yra toks ryškus tik vasarą, ir jame gali iš karto nešti daugiau kaip dešimt mažų žuvų.",
+    "arctic-tern":
+      "Kiekvieną metus jis skrenda iš Arktikos į Antarktiką ir atgal, ilgiausią kelionę iš visų gyvūnų.",
+    "arctic-fox":
+      "Jo tankus kailis įšyla iki −50 °C, ir jis suvynioja pūkėtą uodegą aplink save, kaip antklodę.",
+    "harp-seal":
+      "Jauni ruoniai gimsta su pūkuota balta kailiu ir po kelių savaičių jį pakeičia pilka, dėmėta.",
+    eider:
+      "Eiderės iškloja lizdus minkšta plunksna iš savo krūtinės, kai kurios šilčiausių plunksnų.",
+    "snowy-owl":
+      "Skirtingai nei dauguma pelėdų, medžioja dieną: Arktikos vasarą saulė niekada neišryškėja.",
+    caribou:
+      "Tanto ir moterys auga ragai, ir bandomi kas metus keliauja toliau nei kiti žemės žinduoliai.",
+    "musk-ox":
+      "Kai ateikia pavojus, bandomi stovi apskritime, ragais į išorę, o jaunikliai saugiai viduryje.",
+    "arctic-wolf":
+      "Jis gyvena taip toli šiaurėje, kad kai kurios bandomos beveik niekada netiko žmones.",
+    walrus:
+      "Jis naudoja savo ilgas dantis, kad išlipa iš vandens ant ledo.",
+    beluga:
+      "Vadinama jūros kanarėle dėl svyravimų ir čirpuliavimo. Skirtingai nei dauguma banginių, gali sukti galvą.",
+    "polar-bear":
+      "Po jo tankiu baltais kailiu oda yra juoda, kad sugertų saulės šilumą.",
+    narwhal:
+      "Jo dantis yra dantų, augančių per viršutinį lūpą, spiraliniu, iki 3 m ilgio.",
+    "bowhead-whale":
+      "Jis gali praburti ledą savo dideliu galva ir gali gyventi daugiau kaip 200 metų.",
+    "harvest-mouse":
+      "Viena mažiausių pasaulio pečių, gali suvynioti uodegą aplink stiebrą, kaip papildomą ranką.",
+    "garden-spider":
+      "Jis verčia visiškai naują voratinklį beveik kiekvieną naktį, ir dažnai suvaldo senąjį.",
+    toad:
+      "Nesulipsite šilpų nuo rupūžės: jos iškilimai yra tik oda, kaip ji auga.",
+    "brown-bat":
+      "Jis tamsieje randa vabzdžius pagal jų atspindžius ir per valandą gali sugauti šimtus.",
+    crow:
+      "Varanos gali atpažinti žmonių veidus ir prisiminti juos metais.",
+    "barn-owl":
+      "Jo širdies formos veidas renka garsą kaip indą, todėl gali medžioti visiškai tamsos.",
+    "black-cat":
+      "Škotijoje ir Japonijoje manoma, kad juoda katė, kerta jūsų kelią, priverčia sėkmę.",
+    "little-ghost":
+      "Vaiduoklis, dengtas skuduru, yra vienas seniausių Vėlinių kostiumų.",
+    "cloudy-moon":
+      "Mėnulis visada rodo Žemėi tą pačią pusę; niekas nematė tolimosios pusės iki 1959 m.",
+    gourdling:
+      "Moliūgai yra vaisiai, ne daržovės: jie auga iš gėlių ir pilni sėklų.",
+    scarecrow:
+      "Užkariai tūkstančius metų veržiasi paukščius nuo derliaus.",
+    mummy:
+      "Senieji egiptiečiai suvyniokė mumią šimtus metrų drožlės.",
+    vampire:
+      "Tikriji vampyrai gyvena Centrinėje ir Pietų Amerikoje ir dalijasi maistu su baduojančiais draugais.",
+    gargoyle:
+      "Tikrosios gargoyles yra lietaus čiapai: vanduo teka iš jų burnų, nuo sienų.",
+    "howling-wolf":
+      "Vilkai rėkia, kad susikviestų stądą, o rikimas gali neštis kilometrais.",
+    "great-boo":
+      "Žmonės šaukia „Bū!“, kad vienas kitą išsigandintų, nuo bent 1700-ųjų.",
+    "jack-o-lantern":
+      "Pirmieji moliūgų luktai buvo išskusti iš burokėlių Airijoje; Amerikoje juos pakeitė moliūgai.",
+  },
+} satisfies Language;
+
 const languages: Record<LanguageCode, Language> = {
+  lt,
   en: { ...en, scenes: enScenes },
   es,
   fr,
@@ -1846,25 +2454,12 @@ export const languageOptions = (Object.keys(languages) as LanguageCode[]).map(
   (code) => ({ code, name: languages[code].name }),
 );
 
-export const language = $state<{ code: LanguageCode }>({ code: "en" });
+export const language = $state<{ code: LanguageCode }>({ code: "lt" });
 let initialized = false;
 
-function browserCode(): LanguageCode | null {
-  const preferred = navigator.languages?.length
-    ? navigator.languages
-    : [navigator.language];
-  for (const tag of preferred) {
-    const code = String(tag ?? "")
-      .toLowerCase()
-      .split("-")[0];
-    if (code in languages) return code as LanguageCode;
-  }
-  return null;
-}
-
 /**
- * The page is prerendered in English; this picks the saved language, or the
- * browser's own, once it is running in a browser.
+ * The page is prerendered in Lithuanian, which is also the default for visitors
+ * with no saved choice; a saved selection always wins.
  */
 export function initializeLanguage() {
   if (!browser || initialized) return;
@@ -1878,7 +2473,7 @@ export function initializeLanguage() {
   } catch {
     // Private browsing may refuse storage; the language still works this visit.
   }
-  language.code = browserCode() ?? "en";
+  language.code = "lt";
 }
 
 export function setLanguage(code: string) {
