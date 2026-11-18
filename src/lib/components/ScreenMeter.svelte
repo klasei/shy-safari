@@ -26,21 +26,21 @@
 </script>
 
 <div
-  class="w-64 max-w-full space-y-1.5 rounded-2xl bg-white/95 px-3 py-2 shadow-lg"
+  class="w-96 max-w-full space-y-2 rounded-2xl bg-white/95 px-4 py-3 shadow-lg"
   role="group"
   aria-label={t("settings.meter")}
 >
-  <div class="flex items-center justify-between gap-2 text-xs">
+  <div class="flex items-center justify-between gap-3 text-sm">
     <span class="font-semibold tracking-wide text-slate-500 uppercase">
       {t("settings.meter")}
     </span>
     <span
-      class="flex items-center gap-1.5 truncate font-medium {tooLoud
+      class="flex items-center gap-2 truncate font-medium {tooLoud
         ? 'text-rose-800'
         : 'text-emerald-800'}"
     >
       <span
-        class="size-2 shrink-0 rounded-full {tooLoud
+        class="size-3 shrink-0 rounded-full {tooLoud
           ? 'bg-rose-500'
           : 'bg-emerald-500'}"
         aria-hidden="true"
@@ -52,5 +52,5 @@
       >
     </span>
   </div>
-  <MeterBar {level} {goal} {tooLoud} class="h-4 rounded-md" />
+  <MeterBar {level} {goal} {tooLoud} class="h-6 rounded-md" />
 </div>
