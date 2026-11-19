@@ -1890,7 +1890,7 @@ const lt = {
     "scene.forest.hint": "Voverės, lapės ir elniai",
     "scene.jungle.name": "Džiunglės",
     "scene.jungle.hint": "Tinginiai, tukantai ir jaguarai",
-    "scene.arctic.name": "Arktika",
+    "scene.arctic.name": "Arktis",
     "scene.arctic.hint": "Arktiniai lokiai, ruoniai ir narvalai",
     "scene.halloween.name": "Helovynas",
     "scene.halloween.hint": "Varklynai, vaiduokliai ir moliūgai",
